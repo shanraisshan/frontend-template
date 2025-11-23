@@ -86,7 +86,9 @@ frontend/
 │   │   ├── HamburgerMenu.tsx       # Navigation toggle button
 │   │   ├── HamburgerMenu-Usage.md  # Usage tracking
 │   │   ├── Sidebar.tsx             # Navigation sidebar
-│   │   └── Sidebar-Usage.md        # Usage tracking
+│   │   ├── Sidebar-Usage.md        # Usage tracking
+│   │   ├── Label.tsx               # Centered text label
+│   │   └── Label-Usage.md          # Usage tracking
 │   └── GlobalHeader.tsx    # Global navigation header
 │
 ├── lib/                    # Utility functions and types
@@ -144,6 +146,7 @@ import ButtonAI from '@/components/shared/ButtonAI';
   - Animated icon transition (≡ ↔ ×)
   - Rotation animation on toggle
   - Hover/active states
+  - Animates position from left: 0 to left: 250px when sidebar opens
 
 **Example**:
 ```tsx
@@ -162,12 +165,30 @@ import HamburgerMenu from '@/components/shared/HamburgerMenu';
   - Active route highlighting (blue left border)
   - Smooth transitions (0.3s ease)
   - Uses Next.js Link and usePathname
+  - Version information displayed at bottom
 
 **Example**:
 ```tsx
 import Sidebar from '@/components/shared/Sidebar';
 
 <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
+```
+
+**Label** (`components/shared/Label.tsx`)
+- **Purpose**: Displays centered, large, semibold text for page titles and prominent displays
+- **Usage Tracking**: `components/shared/Label-Usage.md`
+- **Props**: `children: ReactNode`
+- **Features**:
+  - Centered text alignment
+  - Large font size (2xl)
+  - Semibold font weight
+  - Simple, reusable text component
+
+**Example**:
+```tsx
+import Label from '@/components/shared/Label';
+
+<Label>This is a page title</Label>
 ```
 
 ### Component Usage Tracking (CRITICAL)
@@ -207,6 +228,7 @@ This component is used in:
 - `shared/ButtonAI-Usage.md` - Primary action button
 - `shared/HamburgerMenu-Usage.md` - Navigation toggle button
 - `shared/Sidebar-Usage.md` - Global navigation sidebar
+- `shared/Label-Usage.md` - Centered text label component
 
 ---
 
@@ -473,6 +495,8 @@ Before committing frontend changes:
 - [HamburgerMenu-Usage.md](../frontend/components/shared/HamburgerMenu-Usage.md)
 - [Sidebar.tsx](../frontend/components/shared/Sidebar.tsx)
 - [Sidebar-Usage.md](../frontend/components/shared/Sidebar-Usage.md)
+- [Label.tsx](../frontend/components/shared/Label.tsx)
+- [Label-Usage.md](../frontend/components/shared/Label-Usage.md)
 
 ---
 

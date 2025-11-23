@@ -22,6 +22,9 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
     { name: 'Settings', path: '/settings' },
   ];
 
+  // TODO: Update this date via CI/CD pipeline or git hook on deployment
+  const deploymentDate = 'Nov 23, 2025';
+
   return (
     <>
       {/* Backdrop overlay */}
@@ -51,8 +54,11 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         transition="transform 0.3s ease-in-out"
         zIndex="1000"
         overflowY="auto"
+        display="flex"
+        flexDirection="column"
       >
-        <VStack align="stretch" gap={0} pt={16}>
+        {/* Navigation items */}
+        <VStack align="stretch" gap={0} pt={16} flex={1}>
           {navItems.map((item) => {
             const isActive = pathname === item.path;
 
@@ -81,6 +87,18 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             );
           })}
         </VStack>
+
+        {/* Version info at bottom */}
+        <Box
+          px={6}
+          py={4}
+          borderTop="1px solid #d0d7de"
+          bg="#f6f8fa"
+        >
+          <Text fontSize="xs" color="#57606a" textAlign="center">
+            Version 1.0 (Deployed: {deploymentDate})
+          </Text>
+        </Box>
       </Box>
     </>
   );

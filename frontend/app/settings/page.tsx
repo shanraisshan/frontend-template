@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { Flex, Text } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
+import Label from '@/components/shared/Label';
 
 /**
  * Settings page - Simplified placeholder
@@ -15,9 +16,7 @@ export default function SettingsPage() {
       justify="center"
       bg="#f6f8fa"
     >
-      <Text fontSize="2xl" fontWeight="semibold">
-        this is settings page
-      </Text>
+      <Label>this is settings page</Label>
     </Flex>
   );
 }

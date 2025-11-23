@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { Flex, Text } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
+import Label from '@/components/shared/Label';
 
 /**
  * Feature page - Simplified placeholder
@@ -15,9 +16,7 @@ export default function FeaturePage() {
       justify="center"
       bg="#f6f8fa"
     >
-      <Text fontSize="2xl" fontWeight="semibold">
-        this is a feature page
-      </Text>
+      <Label>this is a feature page</Label>
     </Flex>
   );
 }
